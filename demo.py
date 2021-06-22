@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-@author: hannahbannq
-"""
+
 import gensim.models
 from gensim.models.word2vec import KeyedVectors
 
