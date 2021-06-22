@@ -3,9 +3,6 @@
 """
 @author: hannahbannq
 """
-import re
-import sys
-import numpy as np
 import gensim.models
 from gensim.models.word2vec import KeyedVectors
 
@@ -93,7 +90,6 @@ print(model.evaluate_word_analogies(analogies='/Users/hannahbannq/Documents/GitH
 print(model.evaluate_word_analogies(analogies='/Users/hannahbannq/Documents/GitHub/Chinese-Word-Vectors/testsets/CA_translated/ca_translated.txt')[0])
 
 #bubble sort
-#list=filtered，排序时比较的s[i][1]
 def bubble_sort(list):
     count = len(list)
     for i in range(count):
@@ -102,10 +98,9 @@ def bubble_sort(list):
                 list[i], list[j] = list[j], list[i]
     return list
 
-#top1000 similar words
+#top1000 similar words & filter out uninterested words
 filtered_list = []
 
-#filter uninterested words
 for target in huji:
     if target in words:
         s = model.most_similar(positive=[target], topn=1000)
@@ -115,10 +110,6 @@ for target in huji:
                 continue
             if pairs[0][0:2] in province or pairs[0][2] == '人' or pairs[0][0:3] in province:
                 delete1.append(pairs)
-        #elif pairs[0][2] == '人':
-            #delete1.append(pairs)
-        #elif pairs[0][0:3] in province:
-            #delete1.append(pairs)
                        
         filtered = list(set(s).difference(delete1))    
         filtered_list.append(bubble_sort(filtered))
