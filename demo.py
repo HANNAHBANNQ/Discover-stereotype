@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jun 21 23:14:00 2021
-
 @author: hannahbannq
 """
 import re
@@ -82,19 +80,19 @@ province = ['河北',
 '台湾',
 '香港']
 
-file = '/Users/hannahbannq/Downloads/sgns.sogounews.bigram-char.txt'
+file = '/sgns.sogounews.bigram-char.txt'
 
 model = gensim.models.KeyedVectors.load_word2vec_format(file, binary=False)
-# 获取“词-索引”字典
+# obtain words dictionary
 vocab = model.key_to_index
 words = list(vocab.keys())
 
-#模型表现
+#evaluation using three files
 print(model.evaluate_word_analogies(analogies="/Users/hannahbannq/Documents/GitHub/Chinese-Word-Vectors/testsets/CA8/semantic.txt")[0])
 print(model.evaluate_word_analogies(analogies='/Users/hannahbannq/Documents/GitHub/Chinese-Word-Vectors/testsets/CA8/morphological.txt')[0])
 print(model.evaluate_word_analogies(analogies='/Users/hannahbannq/Documents/GitHub/Chinese-Word-Vectors/testsets/CA_translated/ca_translated.txt')[0])
 
-#冒泡排序
+#bubble sort
 #list=filtered，排序时比较的s[i][1]
 def bubble_sort(list):
     count = len(list)
