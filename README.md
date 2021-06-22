@@ -8,6 +8,6 @@ This code file includes the process of working out characteristic words from top
 - create provincial words list
 - load embedding & create keywords list
 - evaluate embedding performance using test file (https://github.com/Embedding/Chinese-Word-Vectors/tree/master/testsets)
-- work out top 1000 similar words and obtain interested word， leave provincial words out
+- work out top 1000 similar words and obtain interested word, leave provincial words out
 - make up the possbile words left due to filtering rule before
 - output
