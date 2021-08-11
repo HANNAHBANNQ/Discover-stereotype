@@ -12,5 +12,5 @@ The code file includes the process of working out characteristic words from top 
 - make up the possbile words left due to filtering rule before
 - output
 
-## Group identity word
-This file aims at capturing words describing group identity and basically shares similar logic with the file #demo#. The final result includes those similar words end with "人".
+## Provincial identity word
+This file aims at capturing words describing provincial identity and basically shares similar logic with the file #demo#. The final result includes those similar words end with "人".
