@@ -14,3 +14,12 @@ The code file includes the process of working out characteristic words from top 
 
 ## Provincial identity word
 This file aims at capturing words describing provincial identity and basically shares similar logic with the file #demo#. The final result includes those similar words end with "人".
+
+## Stereotype score
+This file intends to calculate the stereotype score of each regional group on dimensions - In this file I tried for the dimension of 'competence' for example. 
+
+### Steps
+- Preliminary work: see file #demo# and #provincial identity word#. Choose group identity words and dimension words first
+- Make sure there is no replication or missing in embedding dictionary
+- Calculate average distance, which is average cosine similarity for now
+- Calculate stereotype score: distance to high dimension words minus distance to low dimension
