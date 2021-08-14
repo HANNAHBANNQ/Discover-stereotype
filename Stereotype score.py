@@ -67,4 +67,4 @@ south = ['福建人','广东人','海南人','南方人']
 group =[northern, northwest, central, yangtse, southwestern, northeastern, south]
 groupname = ['northern', 'northwest', 'central', 'yangtse', 'southwestern', 'northeastern', 'south']
 for area in group:
-    print(groupname[group.index(area)]+" group's stereotype score for competence is"+"   "+str('%.4f' %stereo(area,high_pure,low_pure)))
+    print('Stereo_competence('+groupname[group.index(area)]+') ='+"  "+str('%.4f' %stereo(area,high_pure,low_pure)))
