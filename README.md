@@ -23,3 +23,12 @@ This file intends to calculate the stereotype score of each regional group on di
 - Make sure there is no replication or missing in embedding dictionary
 - Calculate average distance, which is average cosine similarity for now
 - Calculate stereotype score: distance to high dimension words minus distance to low dimension
+
+## Confirm stereotype
+This file intends to validate whether there exists mixed stereotype in different areas. The logic referes to: Fiske S T, Cuddy A J C, Glick P, et al. A model of (often mixed) stereotype content: competence and warmth respectively follow from perceived status and competition[J]. Journal of personality and social psychology, 2002, 82(6): 878.
+
+### Steps
+- Calculate the competence and warmth score of provinces inside groups respectively
+- For the provinces in each group, test whether the scores in dimensions are significantly different
+- This file tries paired t test and Mann Whitney U test
+- Infer the stereotype category based on results
