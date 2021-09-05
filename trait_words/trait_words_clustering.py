@@ -55,11 +55,12 @@ def f_process_matric_S(S,Save_information_value):
 S_new = f_process_matric_S(s,0.90)
 
 #keep 149 singular values, and obtain compressed matrix
-x = np.zeros([200, 149])
+x = np.zeros([556, 200])
+V_t = V.T
 for i in range(0,149):
     x[i][i]=S_new[1][i]
     
-compressed = np.dot(matrix,x)
+compressed = np.dot(np.dot(U,x),V_t)
 
 #standardization
 scaler = StandardScaler()
