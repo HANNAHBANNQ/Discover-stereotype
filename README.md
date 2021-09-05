@@ -32,3 +32,13 @@ This file intends to validate whether there exists mixed stereotype in different
 - For the provinces in each group, test whether the scores in dimensions are significantly different
 - This file tries paired t test and Mann Whitney U test
 - Infer the stereotype category based on results
+
+## Trait words
+This file contains two files, one of which is txt file for trait words and the other is the process of doing clustering to the words.
+
+### Steps
+- Form the matrix with original word vectors
+- Conduct svd to reduce dimensions (the original vector has 200 dimensions)
+- Obtain the compressed matrix
+- K means: standarization, finding elbow point, k means clustering, comparison of different number of k
+- Combine the classes and export to excel
