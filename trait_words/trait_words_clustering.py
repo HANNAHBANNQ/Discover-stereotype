@@ -54,10 +54,12 @@ def f_process_matric_S(S,Save_information_value):
  
 S_new = f_process_matric_S(s,0.90)
 
-#keep 149 singular values, and obtain compressed matrix
+plt.plot(range(200),S_new[1])
+
+#according to elbow point, keep 10 singular values, and obtain compressed matrix
 x = np.zeros([556, 200])
 V_t = V.T
-for i in range(0,149):
+for i in range(0,10):
     x[i][i]=S_new[1][i]
     
 compressed = np.dot(np.dot(U,x),V_t)
