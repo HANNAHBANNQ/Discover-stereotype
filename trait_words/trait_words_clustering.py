@@ -125,3 +125,67 @@ def export_excel(data):
    file_path.save()
 
 export_excel(data_com)
+
+#or we can just put the steps after kmeans into functions:
+def kmeans_words(num):
+    kmeans = KMeans(
+    init="random",
+    n_clusters=num,
+    n_init=10,
+    max_iter=300,
+    random_state=None
+    )
+    kmeans.fit(Com)
+    Labels = kmeans.labels_
+    return Labels
+
+#num is always greater than n
+#under certain k, the words under certain class label
+def assign_labels(num,n):
+    x = []
+    for i in range(len(trait_pure)):
+        if kmeans_words(num)[i] == n:
+            x.append(trait_pure[i])
+    return x
+
+#assign_labels(4,3)
+'''
+x=[]
+for i in range(len(trait_pure)):
+    if kmeans_words(4)[i] == 3:
+        x.append(trait_pure[i])
+'''
+#save labels and words accordingly into dictionary
+def assign_classes(num):
+    data_com = {}
+    for i in range(num):
+        result = assign_labels(num,i)
+        key_string = 'class'+str(i+1)
+        data_com[key_string] = result
+    return data_com
+
+#assign_classes(4)
+ 
+#set up list of class in preparation for output    
+def combin_title(num):
+    title = []
+    for i in range(num):
+        class_title = 'class'+str(i+1)
+        title.append(class_title)
+    return title
+
+def combin_class(num):
+    classes = []
+    for i in range(num):
+        class_words = assign_classes(num)[combin_title(num)[i]]
+        classes.append(class_words)
+    return classes
+combin_class(4)
+
+def save_excel(num):
+    data_com = [(k, v) for k, l in zip(combin_title(num), combin_class(num)) for v in l]
+    pf = pd.DataFrame(data_com)
+    file_path = pd.ExcelWriter('/Users/hannahbannq/Downloads/classification_'+num+'.xlsx')
+    pf.to_excel(file_path,encoding = 'utf-8',index = False)
+ 
+    file_path.save()
