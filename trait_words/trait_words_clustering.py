@@ -185,7 +185,7 @@ combin_class(4)
 def save_excel(num):
     data_com = [(k, v) for k, l in zip(combin_title(num), combin_class(num)) for v in l]
     pf = pd.DataFrame(data_com)
-    file_path = pd.ExcelWriter('/Users/hannahbannq/Downloads/classification_'+num+'.xlsx')
+    file_path = pd.ExcelWriter('/Users/hannahbannq/Downloads/classification_'+str(num)+'.xlsx')
     pf.to_excel(file_path,encoding = 'utf-8',index = False)
  
     file_path.save()
