@@ -43,9 +43,9 @@ This file contains two files, one of which is txt file for trait words and the o
 - K means: standarization, finding elbow point, k means clustering, comparison of different number of k
 - Combine the classes and export to excel
 
-Updata 9/22: filter out words with less frequently-used trait words 
+Updata 9/22: filter out words with less frequently-used trait words   
 Our target is keep those frequently-used and closely-related words in daily life.First we want to filter out trait words if their similarity with any province is smaller than 
-0.35, but unfortunately there is no such word that meets the standard for all provinces.
+0.35, but unfortunately there is no such word that meets the standard for all provinces.  
 So I modify the limit of conditions:
 - Remove words if their similarity with any province is smaller than 0.25
 or,
