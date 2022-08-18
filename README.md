@@ -43,7 +43,7 @@ This file contains two files, one of which is txt file for trait words and the o
 - K means: standarization, finding elbow point, k means clustering, comparison of different number of k
 - Combine the classes and export to excel
 
-**Update 9/22: filter out words with less frequently-used trait words**   
+**Update 9/22/2021: filter out words with less frequently-used trait words**   
   
 Our target is keep those frequently-used and closely-related words in daily life.First we want to filter out trait words if their similarity with any province is smaller than 
 0.35, but unfortunately there is no such word that meets the standard for all provinces.  
@@ -52,3 +52,15 @@ So I modify the limit of conditions:
 - Remove words if their similarity with any province is smaller than 0.25
 or,
 - Keep if the similarity of a trait word with 5 (the average number of provinces in each group) provinces is > 0.35
+
+**Update 8/18/2022: calculate cosine & euclidean scores per province in the example of "proactive" dimension.**
+
+## New dimension
+### Group
+We categorize the provinces into three levels in the dimensions of culture (see Chua, R. Y., Huang, K. G., & Jin, M. (2019). ) and wealth (using average of GDP per capita for the recent twenty years)
+### Calculating two scores
+- Define words that 1) belong to the dimension of "proactive" 2) appear in the pre-trained word embedding 3) belong to the A+, A-, a+, a- separately
+- Calculate the similarity of the words and provincial words per dimension and per province, averaged by the count of trait words
+- Centralize and normalize the word vectors and calculate the Euclidean distance by the same logic above
+### Scores
+The results of the *calculating two scores*.
